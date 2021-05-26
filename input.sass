@@ -1,0 +1,161 @@
+$dark: #3d3d3d
+$pink-light: #ffcccc
+
+body
+  background: lightgrey
+  margin: 0 auto
+
+main
+  max-width: 1200px
+  margin: 0 auto
+  display: grid
+  column-gap: 10px
+  row-gap: 10px
+  grid-template-columns: (4, 1f)
+  grid-template-rows: auto
+  grid-template-areas: "main-title main-title main-title main-title" "about about about about" "quote quote quote quote" "job-exp job-exp job-exp skills" "education education extracurricular extracurricular"
+
+header
+  position: sticky
+  top: 0
+  nav
+    background-color: $dark
+    display: flex
+    justify-content: space-evenly
+    padding: 20px
+
+    a
+      text-decoration: none
+      color: white
+
+#main-title
+  grid-area: main-title
+  text-align: center
+  font-family: 'Nunito', sans-serif
+  font-size: 3rem
+
+#about
+  grid-area: about
+  display: flex
+  font-family: 'Nunito', sans-serif
+
+  #about__photo
+    max-width: 200px
+    height: auto
+
+  #about__text-cnt
+    background-color: white
+    padding: 50px
+
+#quote
+  grid-area: quote
+  background-color: $dark
+  text-align: center
+  color: white
+  padding: 20px 0
+  font-family: 'Nunito', sans-serif
+
+  #quote__cite
+    font-size: 1.5em
+
+#job-exp
+  background-color: rgb(236, 236, 236)
+  grid-area: job-exp
+  padding: 20px
+
+  #job-exp__experience
+    display: grid
+    column-gap: 10px
+    row-gap: 10px
+    grid-template-columns: (6, 1fr)
+    grid-template-rows: auto
+    grid-template-areas: "job1 job1 job2 job2 job3 job3" "job4 job4 job4 job5 job5 job5"
+
+    .job-exp__jobs
+      background-color: $pink-light
+      border-radius: 10px
+      padding: 10px
+      .job-exp__company-logo
+        max-height: 100px
+        width: auto
+
+    #job-exp__job1
+      grid-area: job1
+      text-align: center
+    #job-exp__job2
+      grid-area: job2
+      text-align: center
+    #job-exp__job3
+      grid-area: job3
+      text-align: center
+    #job-exp__job4
+      grid-area: job4
+      text-align: center
+      display: flex
+    #job-exp__job5
+      grid-area: job5
+      text-align: center
+      display: flex
+
+#skills
+  grid-area: skills
+  background-color: white
+  padding: 20px
+
+#education
+  grid-area: education
+  background-color: white
+  padding: 20px
+
+#extracurricular
+  grid-area: extracurricular
+  background-color: $pink-light
+  padding: 20px
+
+footer
+  background-color: rgb(62, 62, 62)
+  color: lightgrey
+  padding: 10px 50px
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+
+  #footer__social-medias
+    .footer__social-medias_icons
+      max-width: 40px
+      height: auto
+
+  #footer__email-phone
+    p
+      margin: 0
+
+  #footer__copyrights
+    p
+      align-self: flex-end
+
+@media (max-width: 480px)
+  main
+    grid-template-columns: 100%
+    grid-template-areas: "main-title" "about" "quote" "job-exp" "skills" "education" "extracurricular"
+  #about
+    flex-flow: column wrap
+
+    #about__photo
+      max-width: 250px
+      margin: 0 auto
+
+    #about__text-cnt
+      padding: 20px
+
+  #job-exp
+    #job-exp__experience
+      grid-template-columns: 100%
+      grid-template-areas: "job1" "job2" "job3" "job4" "job5"
+
+      #job-exp__job1, #job-exp__job2, #job-exp__job3
+        display: flex
+        align-items: center
+
+  #footer
+    flex-flow: column wrap
